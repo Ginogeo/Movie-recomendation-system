@@ -29,7 +29,7 @@ def get_movie_recommendations(user_movie, data, similarity_matrix):
     sorted_movies = sorted(similarity_scores, key=lambda x: x[1], reverse=True)
 
     print("Top 20 movies for you:")
-    for i, movie in enumerate(sorted_movies[:20], 1):
+    for i, movie in enumerate(sorted_movies[:10], 1):
         index, score = movie
         index_title = data.loc[data.index == index, 'title'].values[0]
         print(f"{i}. {index_title} (Similarity Score: {score:.2f})")
